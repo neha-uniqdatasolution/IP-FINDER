@@ -1,0 +1,35 @@
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="">
+	  <link href=""stylesheet">
+  <script src=""></script>
+  <link rel="stylesheet" href="">
+  <script src"></script>	
+</head>
+<body>
+
+    <form action="{{ url_for("plan")}}" method="POST" >
+        <center>
+        <label for="plan_id">Plan_id:</label>
+        <input type="text" id="plan_id" name="plan_id"><br><br>
+
+
+        <div>
+            <h1>Show Checkboxes</h1>
+            
+            <input type="checkbox" name="Feature" value="Country" id="Feature">
+            <label for="Country"> Country</label><br>
+            <input type="checkbox"  name="Feature" value="ASN_Number" id="Feature" >
+            <label for="ASN_Number"> ASN_Number</label><br>
+            <input type="checkbox"  name="Feature" value="Organization" id="Feature">
+            <label for="Organization"> Organization</label><br>
+            <input type="checkbox" name="Feature" value="Domain" id="Feature">
+            <label for="Domain">Domain</label><br><br>
+            <input type="submit" value="Submit">
+                
+                
+        </div>
+       {% endcomment %}

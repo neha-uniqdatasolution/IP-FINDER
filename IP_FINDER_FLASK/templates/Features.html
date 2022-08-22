@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="">
+	  <link href=""stylesheet">
+  <script src=""></script>
+  <link rel="stylesheet" href="">
+  <script src"></script>	
+</head>
+<body>
+      
+
+        <form action="{{ url_for("plan")}}" method="POST" >
+
+		<center><div><h1 style="margin-top: 60px;margin-left: 20px;">MembershipPlanMaster</h1></div>
+            <input type=radio id="rdo1" checked class="radio-input" name="plan_name" value="Silver" >
+            <label for="rdo1" class="radio-label" > <span class="radio-border"></span> Silver </label>
+            
+            <input type=radio id="rdo2"  class="radio-input" name="plan_name" value="Gold" >
+            <label for="rdo2" class="radio-label" ><span class="radio-border"></span>Gold </label>
+            
+            <input type=radio id="rdo3"  class="radio-input" name="plan_name" value="Platinum" >
+            <label for="rdo3" class="radio-label" ><span class="radio-border"></span>Platinum</label><br><br>
+
+            <label for="plan_price">Price:</label>
+            <input type="text" id="plan_price" name="plan_price"><br><br>
+
+            <div class="control">
+              <label class="radio">
+                <input type="radio" id="plan_type"  name="plan_type"  value="Month">
+                Month
+              </label>
+              <label class="radio">
+                <input type="radio" id="plan_type"  name="plan_type" value="Year">
+                Year
+              </label><br><br>
+            </div>
+
+
+            <label for="numrequest">Request:</label>
+            <input type="text" id="numrequest" name="numrequest"><br><br>
+
+            
+            <label for="plan_price">Descriptaion:</label>
+            <input type="text" id="Descriptaion" name="Descriptaion"><br><br
+
+        <div>
+          <div>
+            <h1>Show Checkboxes</h1>
+      
+            <input type="checkbox" name="Feature[]" value="Country" id="Feature">
+            <label for="Country"> Country</label><br>
+            <input type="checkbox" name="Feature[]" value="ASN_Number" id="Feature" >
+            <label for="ASN_Number"> ASN_Number</label><br>
+            <input type="checkbox"  name="Feature[]"  value="Organization" id="Feature">
+            <label for="Organization"> Organization</label><br>
+            <input type="checkbox" name="Feature[]"  value="Domain" id="Feature">
+            <label for="Domain4">Domain</label><br><br>
+       
+                
+                
+        </div>
+        
+            <input type="submit" value="Submit">
+                            
+                            
+          </div>
+        </form>
+    
+        </center>
+</body>
+</html>

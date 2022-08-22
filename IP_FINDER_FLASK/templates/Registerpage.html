@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login Form Design</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='reg-page.css')}}">    
+</head>
+
+
+<body>
+    <div class="box">
+        <form method="POST"action="/register"> 
+        <center><img src="{{url_for('static', filename='logo.png')}}" alt="" class="img-responsive">
+        <br>
+        <h2><b>Sign Up</b></h2>
+        <br>
+        <div class="container">
+            <div class="col-md-4">
+            
+                    <div class="inputBox">
+                        <input type="text" name="Compnayname"  id="Companyname"/>
+                        <label for="">Company Name</label>
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        <input type="text" name="GST_NO" id="GST_NO" maxlength="15"/>
+                        <label for="">GST Number</label>
+                    
+                     
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                    
+                        <input type="email" name="email" id="email"/>
+                        <label for="">Email</label>
+                    </div>
+                    
+                
+            </div>
+
+            <div class="col-md-4">
+
+                    <div class="inputBox">
+                        <input type="text" name="Ownername" id="Ownername"/>
+                        <label for="">Owner Name</label>
+                    </div>
+                    <br>
+                  
+                    <div class="inputBox">
+                        <input type="text" name="mobile_no" id="mobile_no" maxlength ="10"/>
+                        <label for="">Mobile Number</label>
+                    
+                    
+                        
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        <input type="text" name="Address" id="Address"/>
+                        <label for="">Address</label>
+                    </div>
+            
+            </div> 
+            <br>
+            
+            <div class="col-md-8">
+               <h6 style="color: red;">{{msg}}</h6>
+            </div>
+                
+
+            <div class="col-md-8">
+            <br>
+                <input type="submit" value="Sign Up"> 
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+
+    document.querySelector(".third").addEventListener('click', function(){
+        Swal.fire("Our First Alert", "With some body text and success icon!", "success");
+      
+
+</body>
+
+</html>

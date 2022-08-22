@@ -1,0 +1,29 @@
+{% comment %} <html>
+    <head>
+        <title>SignUp</title>
+    </head>
+
+    <body>
+<center>
+
+    <form method="POST" action="{{ url_for("signup")}}">
+        Firstname : <input type="text" name="firstname"><br>
+        Lastname : <input type="text" name="lastname"><br>
+        Email : <input type="email" name="email"><br>
+        Mobile_no : <input type="number" name="mo_no"><br>
+        Password : <input type="text" name="password"><br>
+        Conform Password : <input type="text" name="c_password">
+<br>
+<br>
+<span>{{error}}</span
+        <br>
+    <input type="submit">
+
+    </form>
+</center>
+</center>
+
+
+    </body>
+
+    </html> {% endcomment %}

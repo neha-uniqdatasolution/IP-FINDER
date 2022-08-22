@@ -1,0 +1,1496 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            background-color: whitesmoke;
+            overflow: auto;
+        }
+
+        #col-md-12 {
+            height: 100px;
+        }
+
+        .row {
+            width: auto;
+        }
+
+        .mid {
+            display: inline-block;
+            position: absolute;
+            margin-left: 15px;
+            margin-top: 15px;
+            width: 80%;
+            height: 100%;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px 0 rgba(188, 189, 188, 0.404), 0 6px 20px 0 rgba(188, 189, 188, 0.404);
+            background-color: white;
+            overflow-y: scroll;
+        }
+
+        .btn {
+            color: white;
+            background-color: #0d5769ea;
+            border-radius: 10px;
+            opacity: 0.9;
+            margin-left: 20px;
+            margin-top: -20px;
+        }
+
+        .btn:hover {
+            opacity: 1;
+            color: white;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        #col-md-12,
+        li {
+            background-color: white;
+            padding: 0;
+        }
+
+        li {
+            padding: 20px 10px;
+        }
+
+        .print {
+            display: inline-block;
+        }
+
+        .title1 {
+            padding-left: 40px;
+            font-size: xx-large;
+            color: black;
+        }
+
+        .title2 {
+            margin-left: 920px;
+            font-size: large;
+            border: 3px solid black;
+            border-radius: 25px;
+            padding: 4px 10px;
+            color: black;
+        }
+
+        .title3 {
+            margin-left: 10%;
+        }
+
+        .hr {
+            border: 1px solid black;
+        }
+
+        li {
+            color: black;
+            font-size: large;
+        }
+
+        a {
+            font-style: normal;
+            color: black;
+            text-decoration: none;
+        }
+
+        .list {
+            border-bottom: 1px solid #0d5769ea;
+        }
+
+        .profile {
+            padding-left: 25px;
+            padding-top: 0px;
+            padding-bottom: 5px;
+            font-size: large;
+        }
+
+        .table1 {
+            margin-left: 10px;
+            margin-top: 10px;
+            width: auto;
+        }
+
+        td {
+            font-size: medium;
+            text-align: left;
+            padding: 1px 50px 1px 20px;
+            height: 50px;
+        }
+
+        #state {
+            width: 100px;
+        }
+
+        .label {
+            width: 20%;
+            color: black;
+            font-size: medium;
+            font-style: normal;
+            border: 1px solid black;
+        }
+
+        .record {
+            width: 100%;
+        }
+
+        .print {
+            margin-top: 20px;
+            margin-left: 910px;
+        }
+
+        .section {
+            display: inline-block;
+            height: auto;
+            width: 218px;
+            box-shadow: 0 24px 48px 0 rgba(188, 189, 188, 0.418);
+        }
+
+        .list:hover {
+            background-color: #0d5769ea;
+            opacity: 0.9;
+            color: white;
+        }
+
+        .sublist {
+            border-bottom: 1px solid #0d5769ea;
+        }
+
+        .sub {
+            width: 215px;
+            padding: 5px 30px;
+        }
+
+        #togglePassword1 {
+
+            margin-left: 170px;
+        }
+
+        .chosen {
+            width: 180px;
+        }
+
+        .Stamp {
+            width: 180px;
+        }
+
+        .town {
+            width: 180px;
+        }
+
+        p {
+            margin-left: 20px;
+            color: red;
+
+        }
+
+        .reqError {
+            color: #ff0000;
+            /*Red Color*/
+            font-weight: bold;
+        }
+
+
+        .formerror {
+            color: red;
+        }
+
+        form {
+            background-color: #fff;
+            max-width: auto;
+            margin-left: 235px;
+            margin-right: 30px;
+
+            margin-top: -550px;
+            height: 555px;
+            overflow-y: scroll;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 17px;
+        }
+
+        /* Styling form-control Label */
+
+
+        /* Styling form-control input,
+select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+
+
+        }
+
+        .form-control {
+            width: 90%;
+        }
+
+
+
+        /* Styling form-control Radio
+button and Checkbox */
+
+        textarea {
+            resize: none;
+        }
+
+
+        .col-md-6 {
+
+            height: 111px;
+        }
+
+
+        #label-email1 {
+            margin-left: 15px;
+        }
+
+        #cpasw1 {
+            margin-left: 15px;
+        }
+
+        .eyetoggle {
+            margin-left: 335px;
+            margin-top: -40px;
+        }
+
+        ::-webkit-scrollbar {
+
+            width: 8px;
+
+            height: 5px;
+
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 20px;
+            background: #c2c9d2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div id="col-md-12"><img src="{% static 'Comment/Images/l.jpg' %}" width="14.9%" height="100%" />
+            <span class="title1">Add Employee</span>
+            <span class="title2">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+
+                {{name.First_Name}}
+            </span>
+        </div>
+    </div>
+
+    <div class="section">
+        <a href='{% url "test_admin" %}'>
+            <li class="list">
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                <span>Dashboard</span>
+            </li>
+        </a>
+        <a href='{% url "Manage_Employee" %}'>
+            <li class="list" style="background-color: #0d5769ea;">
+                <i class="fa fa-users" aria-hidden="true" style="color: white;"></i>
+                <span style="color:white;">Manage Employee</span>
+            </li>
+        </a>
+        <a href='{% url "showimages" %}'>
+            <li class="list">
+                <i class="fa fa-smile-o" aria-hidden="true"></i>
+                <span>Images</span>
+            </li>
+        </a>
+        <a href="{% url 'dailydetailed' %}">
+            <li class="list">
+                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                <span>Reports</span>
+            </li>
+        </a>
+        <a href="{% url 'All_Leave' %}">
+            <li class="list">
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                <span>Manage Leave</span>
+            </li>
+        </a>
+        <a href="{% url 'Holiday_Status' %}">
+            <li class="list">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <span>All Holiday</span>
+            </li>
+        </a>
+        <a href="{% url 'setting' %}">
+            <li class="list">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                <span>Settings</span>
+            </li>
+        </a>
+        <a href="{% url 'logout' %}">
+            <li class="list">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                <span>Log out</span>
+            </li>
+        </a>
+        <li></li>
+    </div>
+
+    <form action="{% url 'register' %}" name="myForm" onsubmit="return validateForm(event);" method="POST">
+        {% csrf_token %}
+        <!-- {% if messages %}
+        {% for ms in messages %}
+        <span style="color: red;">{{ ms }}</span>
+        {% endfor %}
+        {% endif %} -->
+        <div class="profile">
+            <span>Register Employee</span>
+
+            <div class="print">
+                <a href="#"><button class="btn" tabindex="16" type="submit">Submit</button></a>
+            </div>
+
+        </div>
+        <div class="hr"></div>
+        <br>
+        <!-- Details -->
+        <p>All fields marked with * are required</p>
+        <br>
+        <div class="row">
+            <div class="col-md-6" id="fname">
+                <label for="name" id="label-name">
+                    First Name *
+                </label>
+
+                <!-- Input Type Text -->
+                <input class="form-control" type="text" placeholder="Enter Firstname" 
+                    onfocusout=" ValidateName()" tabindex="1" name="firstname">
+                <span id="Fname1" class="formerror"></span>
+            </div>
+
+            <div class="col-md-6" id="lname">
+                <label for="email" id="label-email">
+                    Last Name *
+                </label>
+
+                <!-- Input Type Email-->
+                <input class="form-control" type="text" placeholder="Enter Lastname" tabindex="2"
+                     onfocusout=" ValidateLastName()" name="lastname">
+                <span id="Lname1" class="formerror"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" id="Adr1">
+                <label for="age" id="label-age">
+                    Address1 *
+                </label>
+
+                <!-- Input Type Text -->
+                <textarea class="form-control" placeholder="Enter Address" tabindex="3" onfocusout="ValidateAddress1()"
+                    rows="3" cols="20" name="Address1">{{home.Address1}}</textarea>
+                <span id="AD1" class="formerror"></span>
+            </div>
+
+            <div class="col-md-6" id="Adr2">
+                <label for="age" id="label-age">
+                    Address2(optional)
+                </label>
+
+                <!-- Input Type Text -->
+                <textarea class="form-control" placeholder="Enter Address" onfocusout="ValidateAddress2()" tabindex="4"
+                    rows="3" cols="20" name="Address2">{{home.Address2}}</textarea>
+                <span id="AD2" class="formerror"></span>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div id="country1" class="col-md-6">
+                <label for="age" id="label-age">
+                    Country *
+                </label>
+
+
+                <!-- Input Type Text -->
+                <select class="form-control" class="chosen" id="Country" onfocusout="ValidateCountry()" tabindex="5"
+                    name="Country">
+                    <option value="">-- Select Country --</option>
+                    {% for countries in great %}
+                    {% if home.Country == countries.Country_Name %}
+                    <option value="{{countries.id}}" selected>{{countries.Country_Name}}</option>
+                    {% else %}
+                    <option value="{{countries.id}}">{{countries.Country_Name}}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+                <span id="Count1" class="formerror"></span>
+            </div>
+
+            <div class="col-md-6" id="state1">
+                <label for="age" id="label-age">
+                    State *
+                </label>
+
+
+                <!-- Input Type Text -->
+                <select class="form-control" id="State" onfocusout="ValidateState()" tabindex="6" name="State"
+                    class="Stamp">
+                    <option value="">-- Select State --</option>
+                    {% for states in manage %}
+                    {% if home.State == states.State_Name %}
+                    <option value="{{states.id}}" id="{{states.Country_id_id}}" onchange="cascade()" selected>
+                        {{states.State_Name}}</option>
+                    {% else %}
+                    <option value="{{states.id}}" id="{{states.Country_id_id}}" onchange="cascade()">
+                        {{states.State_Name}}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+
+                <span id="Stat1" class="formerror"></span>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" id="city1">
+                <label for="age" id="label-age">
+                    City *
+                </label>
+
+
+                <!-- Input Type Text -->
+                <select class="form-control" id="City" class="town" onfocusout="ValidateCity()" tabindex="7"
+                    name="City">
+                    <option value="">-- Select City --</option>
+                    {% for cities in good %}
+                    {% if home.City == cities.City_Name %}
+                    <option value="{{cities.id}}" id="{{cities.State_id_id}}" selected>{{cities.City_Name}}
+                    </option>
+                    {% else %}
+                    <option value="{{cities.id}}" id="{{cities.State_id_id}}">{{cities.City_Name}}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+
+                <span id="Cit1" class="formerror"></span>
+
+            </div>
+
+            <div class="col-md-6" id="Pincode">
+                <label for="email" id="label-email">
+                    Pincode *
+                </label>
+
+                <!-- Input Type Email-->
+
+                <input class="form-control" placeholder="Enter Pincode" type="text" name="pin-code"
+                     onfocusout="Validatepincode()" onkeypress="return onlyNumberKey(event)"
+                    maxlength="6" tabindex="8">
+                <span id="pin1" class="formerror"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" id="DOB1">
+                <label for="age" id="label-age">
+                    Date Of Birth *
+                </label>
+
+
+                <!-- Input Type Text -->
+                <input class="form-control" type="date" value="{{home.Day_of_Birth}}" onfocusout="ValidateDOB()"
+                    tabindex="9" name="DOB">
+                <span id="DOBI1" class="formerror"></span>
+            </div>
+
+            <div class="col-md-6" id="Contact">
+                <label for="email" id="label-email">
+                    Contact No *
+                </label>
+
+                <!-- Input Type Email-->
+                <input class="form-control" placeholder="Enter Contact no" type="text" name="contact"
+                    onfocusout="ValidateContact()" onkeypress="return onlyNumberKey(event)" 
+                    maxlength="10" tabindex="10">
+                <span id="Cont1" class="formerror"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" id="dept1">
+                <label for="age" id="label-age">
+                    Department *
+                </label>
+
+                <!-- Input Type Text -->
+                <select class="form-control" id="Department" onfocusout="ValidateDept()" tabindex="11"
+                    name="Department">
+                    <option value="">-- Select Department --</option>
+                    {% for Departments in Dept %}
+                    {% if home.Department == Departments.Department_Name %}
+                    <option value="{{Departments.id}}" selected>{{Departments.Department_Name}}</option>
+                    {% else %}
+                    <option value="{{Departments.id}}">{{Departments.Department_Name}}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+                <span id="Depar1" class="formerror"></span>
+            </div>
+
+            <div class="col-md-6" id="gender1">
+                <label for="age" id="label-age">
+                    Gender *
+                </label>
+
+
+                <!-- Input Type Text -->
+                <select class="form-control" id="Gender" tabindex="12" onfocusout="Validategender()" tabindex="12"
+                    name="gender">
+                    <option value="">-- Select Gender --</option>
+                    {% for gender_name in gender %}
+                    {% if home.Gender == gender_name.Gender_type %}
+                    <option value="{{gender_name.id}}" selected>{{gender_name.Gender_type}}</option>
+                    {% else %}
+                    <option value="{{gender_name.id}}">{{gender_name.Gender_type}}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+
+                <span id="gen1" class="formerror"></span>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" id="Email">
+                <label for="email">
+                    Email *
+                </label>
+
+                <!-- Input Type Email-->
+                <input class="form-control" type="text" placeholder="Enter Email" tabindex="13" 
+                    onfocusout="ValidateEmail()" tabindex="13" name="email">
+                <span id="email12" class="formerror"></span>
+            </div>
+
+            <div class="col-md-6" id="Pass">
+                <label for="email" id="label-email">
+                    Password *
+                </label>
+
+                <!-- Input Type Email-->
+                <input class="form-control" type="password" onfocusout="ValidatePassword()" tabindex="14"
+                    autocomplete="current-password" class="form-control" placeholder="Enter password" id="psq"
+                    name="psw">
+                <div class="eyetoggle"><i class="far fa-eye" id="togglePassword"
+                        style="margin-left: 165px; cursor: pointer;"></i></div>
+                <br>
+                <span id="pasw1" class="formerror"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" id="cPass">
+                <label for="email" id="label-email1">
+                    Confirm Password *
+                </label>
+
+                <!-- Input Type Email-->
+                <input class="form-control" type="password" onfocusout="ValidateConfirmPsw()" tabindex="15"
+                    autocomplete="current-password" class="form-control" placeholder="Enter password" id="cpsq"
+                    name="Cpsw">
+                <div class="eyetoggle"><i class="far fa-eye" id="togglePassword1"></i></div>
+                <br>
+                <span id="cpasw1" class="formerror"></span>
+            </div>
+        </div>
+        <!-- Multi-line Text Input Control -->
+
+    </form>
+    </div>
+    
+
+    <script>
+        console.log('qwe');
+        console.log({{ home.First_Name }});
+        console.log('asd');
+        function ValidateEmail(inputText) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (inputText.value.match(mailformat)) {
+
+                document.form1.email.focus();
+                return true;
+            }
+            else {
+
+                document.form1.email.focus();
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const psw = document.querySelector('#psq');
+
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = psw.getAttribute('type') === 'password' ? 'text' : 'password';
+            psw.setAttribute('type', type);
+            // toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+    <script>
+        const togglePassword1 = document.querySelector('#togglePassword1');
+        const psw_confirm = document.querySelector('#cpsq');
+
+        togglePassword1.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = psw_confirm.getAttribute('type') === 'password' ? 'text' : 'password';
+            psw_confirm.setAttribute('type', type);
+            // toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var $country = $('#Country'),
+                $state = $('#State'),
+                $options = $state.find('option');
+            $country.on('change', function () {
+                console.log("Hiii");
+                $state.html($options.filter('[id="' + this.value + '"]'));
+            }).trigger('change');
+
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            var $state = $('#State'),
+                $city = $('#City'),
+
+                $various = $city.find('option');
+            $state.on('change', function () {
+                console.log("Good");
+                $city.html($various.filter('[id="' + this.value + '"]'));
+
+            }).trigger('change');
+        });
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        function clearErrors() {
+
+            errors = document.getElementsByClassName('formerror');
+            for (let item of errors) {
+                item.innerHTML = "";
+            }
+
+
+        }
+        function seterror(id, error) {
+            //sets error inside tag of id 
+            element = document.getElementById(id);
+            element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+        }
+
+        function validateForm(e) {
+            var returnval = true;
+            clearErrors();
+            var passwordregex = /^(.{0,7}|[^0-9]*|[^A-Z]*|[a-zA-Z0-9]*)$/;
+            var emailRegex = new RegExp(
+                /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+            );
+            var numberRegex = new RegExp("[0-9]");
+            var contactRegex = new RegExp("[6789][0-9]{9}");
+
+            var numRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            var name = document.forms['myForm']["firstname"].value;
+            if (name.match(numRegex)) {
+                seterror("fname", "Special Characters are not allowed");
+                returnval = false;
+            }
+            var name = document.forms['myForm']["firstname"].value;
+            if (name.match(numberRegex)) {
+                seterror("fname", "only characters are allowed");
+                returnval = false;
+            }
+            var name = document.forms['myForm']["firstname"].value;
+            if (name.length > 20) {
+                seterror("fname", "Input must be less than 20 characters");
+                returnval = false;
+            }
+
+            var name = document.forms['myForm']["firstname"].value;
+            if (name.length == "") {
+                seterror("fname", "This field is required");
+                returnval = false;
+            }
+
+            var lastname = document.forms['myForm']["lastname"].value;
+            if (lastname.match(numRegex)) {
+                seterror("lname", "Special Characters are not allowed");
+                returnval = false;
+            }
+
+
+            var lastname = document.forms['myForm']["lastname"].value;
+            if (lastname.match(numberRegex)) {
+                seterror("lname", "only characters are allowed");
+                returnval = false;
+            }
+
+            var lastname = document.forms['myForm']["lastname"].value;
+            if (lastname.length > 20) {
+                seterror("lname", "Input must be less than 20 characters");
+                returnval = false;
+            }
+            var lastname = document.forms['myForm']["lastname"].value;
+            if (lastname.length == "") {
+                seterror("lname", "This field is required");
+                returnval = false;
+            }
+
+
+            var Address1 = document.forms['myForm']["Address1"].value;
+            if (Address1.length == "") {
+                seterror("Adr1", "This field is required");
+                returnval = false;
+            }
+            var Address1 = document.forms['myForm']["Address1"].value;
+            if (Address1.length > 100) {
+                seterror("Adr1", "Input must be less than 100  characters");
+                returnval = false;
+            }
+            var Address2 = document.forms['myForm']["Address2"].value;
+            if (Address2.length > 100) {
+                seterror("Adr2", "Input must be less than 100  characters");
+                returnval = false;
+            }
+
+            var DOB = document.forms['myForm']["DOB"].value;
+            if (DOB.length == "") {
+                seterror("DOB1", "This field is required");
+                returnval = false;
+            }
+            var country = document.forms['myForm']["Country"].value;
+
+            if (country.length == "") {
+                seterror("country1", "This field is required");
+                returnval = false;
+            }
+
+            var state = document.forms['myForm']["State"].value;
+
+            if (state.length == "") {
+                seterror("state1", "This field is required");
+                returnval = false;
+            }
+            var city = document.forms['myForm']["City"].value;
+
+            if (city.length == "") {
+                seterror("city1", "This field is required");
+                returnval = false;
+            }
+
+            var contact = document.forms['myForm']["contact"].value;
+
+            if (contact.length == "") {
+                seterror("Contact", "This field is required");
+                returnval = false;
+            }
+
+            else if (contact.match(contactRegex) == null) {
+                seterror("Contact", "contact no is invalid");
+                returnval = false;
+            }
+
+
+            else if (contact.length != 10) {
+                seterror("Contact", "input must in 10 digits");
+                returnval = false;
+            }
+
+
+            else if (isNaN(contact)) {
+                seterror("Contact", "only digits are allowed");
+                returnval = false;
+            }
+
+            var department = document.forms['myForm']["Department"].value;
+
+            if (department.length == "") {
+                seterror("dept1", "This field is required");
+                returnval = false;
+            }
+
+            var gender = document.forms['myForm']["gender"].value;
+
+            if (gender.length == "") {
+                seterror("gender1", "This field is required");
+                returnval = false;
+            }
+            var Pincode = document.forms['myForm']["pin-code"].value;
+
+            if (Pincode.length == "") {
+                seterror("Pincode", "This field is required");
+                returnval = false;
+            }
+
+            else if (Pincode.length != 6) {
+                seterror("Pincode", "input must be in 6 digits");
+                returnval = false;
+            }
+            else if (isNaN(Pincode)) {
+                seterror("Pincode", "only digits are allowed");
+                returnval = false;
+            }
+
+            var email = document.forms['myForm']["email"].value;
+            if (!email.match(emailRegex)) {
+                seterror("Email", "*Email is invalid");
+                returnval = false;
+            }
+
+            var email = document.forms['myForm']["email"].value;
+            if (email.length == "") {
+                seterror("Email", " This field is required");
+                returnval = false;
+            }
+
+            var email = document.forms['myForm']["email"].value;
+            if (email.length > 50) {
+                seterror("Email", "*Email length is too long");
+                returnval = false;
+            }
+
+
+
+            var password = document.forms['myForm']["psw"].value;
+            if (password.match(passwordregex)) {
+                seterror("Pass", "Make a strong password, 8 characters, including a uppercase letter, number and one special character.");
+                returnval = false;
+
+            }
+
+            var password = document.forms['myForm']["psw"].value;
+            if (password.length < 8) {
+
+
+                seterror("Pass", "*Password should be atleast 8 characters long!");
+                returnval = false;
+            }
+
+            var password = document.forms['myForm']["psw"].value;
+            if (password.length == "") {
+
+
+                seterror("Pass", " This field is required");
+                returnval = false;
+            }
+            var password = document.forms['myForm']["psw"].value;
+            var Cpassword = document.forms['myForm']["Cpsw"].value;
+            if (Cpassword != password) {
+
+
+                seterror("cPass", " Password doesn't match");
+                returnval = false;
+            }
+
+
+
+
+            var Cpassword = document.forms['myForm']["Cpsw"].value;
+            if (Cpassword.length == "") {
+
+
+                seterror("cPass", " This field is required");
+                returnval = false;
+            }
+
+
+
+
+            return returnval;
+        }
+
+
+
+    </script>
+
+
+
+    <script>
+
+        function ValidateName() {
+            var numberRegex = new RegExp("[0-9]");
+            var numRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+
+            var name = document.forms['myForm']["firstname"].value;
+            if (name.match(numRegex)) {
+                seterror("fname", "Special Characters are not allowed");
+                returnval = false;
+            }
+            else {
+
+                errors = document.getElementById("Fname1");
+
+                errors.innerHTML = "";
+
+            }
+
+
+            var name = document.forms['myForm']["firstname"].value;
+            if (name.match(numberRegex)) {
+                seterror("fname", "only characters are allowed");
+                returnval = false;
+            }
+
+
+
+
+
+
+
+            var name = document.forms['myForm']["firstname"].value;
+            if (name.length == "") {
+                seterror("fname", "This field is required");
+                returnval = false;
+            }
+
+
+
+
+
+
+            var name = document.forms['myForm']["firstname"].value;
+            if (name.length > 20) {
+                seterror("fname", "Input must be less than 20 characters");
+                returnval = false;
+            }
+
+            return returnval;
+        }
+
+
+
+
+    </script>
+    <script>
+        function ValidateLastName() {
+            var numberRegex = new RegExp("[0-9]");
+            var numRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+
+            var lastname = document.forms['myForm']["lastname"].value;
+            if (lastname.match(numRegex)) {
+                seterror("lname", "Special Characters are not allowed");
+                returnval = false;
+            }
+            else {
+
+                errors = document.getElementById("Lname1");
+
+                errors.innerHTML = "";
+
+            }
+
+            var lastname = document.forms['myForm']["lastname"].value;
+            if (lastname.match(numberRegex)) {
+                seterror("lname", "only characters are allowed");
+                returnval = false;
+            }
+
+
+
+
+            var lastname = document.forms['myForm']["lastname"].value;
+            if (lastname.length == "") {
+                seterror("lname", "This field is required");
+                returnval = false;
+            }
+            var lastname = document.forms['myForm']["lastname"].value;
+            if (lastname.length > 20) {
+                seterror("lname", "Input must be less than 20 characters");
+                returnval = false;
+            }
+
+            return returnval;
+        }
+
+    </script>
+
+
+
+    <script>
+        function ValidateAddress1() {
+            var Address1 = document.forms['myForm']["Address1"].value;
+            if (Address1.length == "") {
+                seterror("Adr1", "This field is required");
+                returnval = false;
+            }
+            else {
+
+                errors = document.getElementById("AD1");
+
+                errors.innerHTML = "";
+
+            }
+            var Address1 = document.forms['myForm']["Address1"].value;
+            if (Address1.length > 100) {
+                seterror("Adr1", "Input must be less than 100  characters");
+                returnval = false;
+            }
+
+
+            return returnval;
+        }
+    </script>
+    <script>
+
+        function ValidateAddress2() {
+            var Address2 = document.forms['myForm']["Address2"].value;
+            if (Address2.length > 100) {
+                seterror("Adr2", "Input must be less than 100  characters");
+                returnval = false;
+            }
+            else {
+
+                errors = document.getElementById("AD2");
+
+
+                errors.innerHTML = "";
+
+
+            }
+            return returnval;
+        }
+
+
+    </script>
+
+    <script>
+        function ValidateDOB() {
+
+            var DOB = document.forms['myForm']["DOB"].value;
+            if (DOB.length == "") {
+                seterror("DOB1", "This field is required");
+                returnval = false;
+            }
+            else {
+
+                errors = document.getElementById("DOBI1");
+
+
+                errors.innerHTML = "";
+
+
+            }
+            return returnval;
+        }
+
+
+    </script>
+
+    <script>
+        function ValidateCountry() {
+
+            var country = document.forms['myForm']["Country"].value;
+
+            if (country.length == "") {
+                seterror("country1", "This field is required");
+                returnval = false;
+            }
+            else {
+
+                errors = document.getElementById("Count1");
+
+
+                errors.innerHTML = "";
+
+
+            }
+            return returnval;
+        }
+
+
+    </script>
+    <script>
+        function ValidateState() {
+
+            var state = document.forms['myForm']["State"].value;
+
+            if (state.length == "") {
+                seterror("state1", "This field is required");
+                returnval = false;
+            }
+            else {
+
+                errors = document.getElementById("Stat1");
+
+
+                errors.innerHTML = "";
+
+
+            }
+            return returnval;
+        }
+
+
+    </script>
+
+    <script>
+
+        function ValidateCity() {
+
+            var city = document.forms['myForm']["City"].value;
+
+            if (city.length == "") {
+                seterror("city1", "This field is required");
+                returnval = false;
+            }
+
+            else {
+
+                errors = document.getElementById("Cit1");
+
+
+                errors.innerHTML = "";
+
+
+            }
+            return returnval;
+        }
+
+
+    </script>
+
+
+    <script>
+        function ValidateContact() {
+            var contactRegex = new RegExp("[6789][0-9]{9}");
+
+
+            var contact = document.forms['myForm']["contact"].value;
+
+            if (contact.length == "") {
+                seterror("Contact", "This field is required");
+                returnval = false;
+            }
+            else if (contact.length != 10) {
+                seterror("Contact", "input must be in 10 digits");
+                returnval = false;
+            }
+            else if (isNaN(contact)) {
+                seterror("Contact", "only digits are allowed");
+                returnval = false;
+            }
+            else if (contact.match(contactRegex) == null) {
+                seterror("Contact", "contact no is invalid");
+                returnval = false;
+            }
+
+
+            else {
+
+                errors = document.getElementById("Cont1");
+
+                errors.innerHTML = "";
+
+            }
+
+
+            return returnval;
+        }
+
+
+
+    </script>
+
+    <script>
+        function ValidateDept() {
+            var department = document.forms['myForm']["Department"].value;
+
+            if (department.length == "") {
+                seterror("dept1", "This field is required");
+                returnval = false;
+            }
+            else {
+
+                errors = document.getElementById("Depar1");
+
+
+                errors.innerHTML = "";
+
+
+            }
+
+            return returnval;
+        }
+
+    </script>
+    <script>
+        function Validategender() {
+            var gender = document.forms['myForm']["gender"].value;
+
+            if (gender.length == "") {
+                seterror("gender1", "This field is required");
+                returnval = false;
+            }
+            else {
+
+                errors = document.getElementById("gen1");
+
+
+                errors.innerHTML = "";
+
+
+            }
+
+            return returnval;
+        }
+
+    </script>
+    <script>
+        function Validatepincode() {
+
+            var Pincode = document.forms['myForm']["pin-code"].value;
+
+            if (Pincode.length == "") {
+                seterror("Pincode", "This field is required");
+                returnval = false;
+            }
+
+            else if (Pincode.length != 6) {
+                seterror("Pincode", "input must be in 6 digits");
+                returnval = false;
+            }
+            else if (isNaN(Pincode)) {
+                seterror("Pincode", "only digits are allowed");
+                returnval = false;
+            }
+            else {
+
+                errors = document.getElementById("pin1");
+
+                errors.innerHTML = "";
+
+            }
+
+
+            return returnval;
+        }
+
+    </script>
+
+
+    <script>
+
+        function ValidateEmail() {
+
+            var emailRegex = new RegExp(
+                /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+            );
+            var email = document.forms['myForm']["email"].value;
+            if (!email.match(emailRegex)) {
+                seterror("Email", "*Email is invalid");
+                returnval = false;
+            }
+
+            else {
+
+                errors = document.getElementById("email12");
+
+                errors.innerHTML = "";
+
+            }
+
+
+
+            var email = document.forms['myForm']["email"].value;
+            if (email.length == "") {
+                seterror("Email", " This field is required");
+                returnval = false;
+            }
+
+
+
+            var email = document.forms['myForm']["email"].value;
+            if (email.length > 50) {
+                seterror("Email", "*Email length is too long");
+                returnval = false;
+            }
+
+
+
+
+
+
+
+
+
+            return returnval;
+        }
+
+
+
+
+
+    </script>
+
+    <script>
+
+        function ValidatePassword() {
+            var passwordregex = /^(.{0,7}|[^0-9]*|[^A-Z]*|[a-zA-Z0-9]*)$/;
+
+            var password = document.forms['myForm']["psw"].value;
+            if (password.match(passwordregex)) {
+                seterror("Pass", "Make a strong password, 8 characters, including a uppercase letter, number and one special character.");
+                returnval = false;
+
+            }
+            else {
+
+                errors = document.getElementById("pasw1");
+
+                errors.innerHTML = "";
+
+            }
+
+            var password = document.forms['myForm']["psw"].value;
+            if (password.length < 8) {
+
+
+                seterror("Pass", "*Password should be atleast 8 characters long!");
+                returnval = false;
+            }
+
+            var password = document.forms['myForm']["psw"].value;
+            if (password.length == "") {
+
+
+                seterror("Pass", " This field is required");
+                returnval = false;
+            }
+
+
+            return returnval;
+        }
+
+
+
+
+
+
+    </script>
+
+    <script>
+        function ValidateConfirmPsw() {
+            var password = document.forms['myForm']["psw"].value;
+            var Cpassword = document.forms['myForm']["Cpsw"].value;
+            if (Cpassword != password) {
+
+
+                seterror("cPass", " Password doesn't match");
+                returnval = false;
+            }
+            else {
+
+                errors = document.getElementById("cpasw1");
+
+                errors.innerHTML = "";
+
+            }
+
+
+
+
+
+
+
+
+
+
+            var Cpassword = document.forms['myForm']["Cpsw"].value;
+            if (Cpassword.length == "") {
+
+
+                seterror("cPass", " This field is required");
+                returnval = false;
+            }
+
+
+
+
+
+
+
+
+
+
+            return returnval;
+        }
+
+
+
+
+    </script>
+
+
+
+    <script>
+        function onlyNumberKey(evt) {
+
+            // Only ASCII character in that range allowed
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+            if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                return false;
+            return true;
+        }
+    </script>
+</body>
+
+</html>

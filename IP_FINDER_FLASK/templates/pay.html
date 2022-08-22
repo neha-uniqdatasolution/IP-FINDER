@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Index</title>
+        <head>
+            <body>
+                
+                <center>
+                    <h1>Make a Payment...</h1>
+                    <br><br>
+                    <form action = "/success" method = "POST">
+                        <scripts
+                            src="https://chechout.raorpay.com/v1/checkout.js"
+                            data-key = "rzp_test_B9G310atHwH1mj"
+                            data-amount = "{{payment['amount']}}"
+                            data-currency="INR"
+                            data-orderoid="order_CgmcjRh9ti2lP7"
+                            data-buttontext = "Pay with Razorpay"
+                            data-name="Acme Corp"
+                            data-description="Test transaction"
+                            
+                            data-theme.color = '#F37254'
+                            >
+                        </scripts>
+                        <input type="hidden" custom="Hidden Element" name="hidden">
+
+                    </form>
+                </center>
+
+
+
+            </body>
+    </html>

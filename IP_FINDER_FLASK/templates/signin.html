@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login Form Design</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="{{url_for('static', filename='login.css')}}">    
+</head>
+
+
+<body>
+    <div class="box">
+        <center><img src="{{url_for('static', filename='logo.png')}}" alt="" class="img-responsive">
+        <br>
+        <h2><b>SignIn</b></h2>
+        <br>
+        <form method="POST" action="{{ url_for("signin")}}">
+            <div class="inputBox">
+                <input type="email" name="email">
+                <label for="">Email</label>
+            </div>
+            <br>
+            <div class="inputBox">
+                <input type="password" name="password">
+                <label for="">Password</label>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>

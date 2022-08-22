@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login Form Design</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='sign.css')}}">
+</head>
+
+<body>
+    <div class="box">
+        <center><img src="{{url_for('static', filename='logo.png')}}" alt="" class="img-responsive"></center>
+        <br>
+        <h2><b>Sign Up</b></h2>
+        <br>
+        <div class="container">
+            <div class="col-md-4">
+                <form method="POST" action="{{ url_for("signup")}}">
+                    <div class="inputBox">
+                        <input type="text" name="firstname">
+                        <label for="">First Name</label>
+                        {{msg}}
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        <input type="text" name="mo_no" required="" maxlength="10">
+                        <label for="">Mobile Number</label>
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        <input type="password" name="password" required="">
+                        <label for="">Password</label>
+                    </div>
+
+            
+            </div>
+            <div class="col-md-4">
+                
+                    <div class="inputBox">
+                        <input type="text" name="lastname" required="">
+                        <label for="">Last Name</label>
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        <input type="email" name="email" required="">
+                        <label for="">Email</label>
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        <input type="password" name="c_password" required="">
+                        <label for="">Confirm Password</label>
+                    </div>
+                    
+            
+            </div>
+            <br>    
+            <div class="col-md-8">
+           <input type="submit" value="Sign Up">
+            
+            </form>
+
+           <h6 style="color:red"> {{msg}}</h6>
+            </div>
+        </div>
+</body>
+
+</html>
